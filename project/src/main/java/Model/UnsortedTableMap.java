@@ -158,7 +158,7 @@ abstract class AbstractMap<K, V> implements Map<K, V> {
 
         protected V setValue(V value) {
             V old = v;
-            v = value;
+            v= value;
             return old;
         }
 
