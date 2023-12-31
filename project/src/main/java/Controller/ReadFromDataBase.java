@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ReadFromDataBase {
-     public static Map<String, ArrayList<String>> MapData;
+     public static UnsortedTableMap<String, ArrayList<String>> MapData;
     public ReadFromDataBase() {
-        MapData = new HashMap<String, ArrayList<String> >();
+        MapData = new UnsortedTableMap<>();
     }
     private void reedFile() throws IOException {
         File file = new File("I:\\ramezon\\data structures\\search-engine-hajmohamad\\project\\src\\main\\java\\Model\\EnglishData");
