@@ -12,12 +12,13 @@ import java.util.Scanner;
 
 
 public class UnsortedTableMap<K, V> extends AbstractMap<K, V> {
-    private ArrayList<MapEntry<K, V>> table = new ArrayList<>();
+    private ArrayList<MapEntry<K, V>> table ;
 
     /**
      * Constructs an initially empty map.
      */
     public UnsortedTableMap() {
+        table= new ArrayList<>();
     }
 // private utility
 
