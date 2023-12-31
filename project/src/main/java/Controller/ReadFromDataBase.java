@@ -18,7 +18,8 @@ public class ReadFromDataBase {
         File file = new File("I:\\ramezon\\data structures\\search-engine-hajmohamad\\project\\src\\main\\java\\Model\\EnglishData");
         for(File f:file.listFiles()){
            String txtInput= Files.readAllLines(f.toPath()).toString();
-//           addToMap(f.getName(),txtInput);
+           addToMap(f.getName(),txtInput);
+
 
 
 
@@ -26,6 +27,16 @@ public class ReadFromDataBase {
         }
 
     }
+
+    private void addToMap(String fileName,String txt){
+        String[] wordList=txt.split(" ");
+        for(String word:wordList){
+            MapData.put(word,new ArrayList<>());
+            MapData.get(word).add(fileName);
+        }
+
+    }
+
 
 
     public static void main(String[] args) throws Exception{
