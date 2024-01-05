@@ -2,18 +2,31 @@ package Controller;
 
 import Model.UnsortedTableMap;
 
+
 import java.io.*;
 import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class ReadFromDataBase {
-     public static HashMap<String, ArrayList<String>> MapData;
+     public static SortedMap<String, ArrayList<String>> MapData;
     public ReadFromDataBase() throws IOException {
-        MapData = new HashMap<>();
+        MapData =new TreeMap<>();
+      ///  reedEnglishDataFile();
+    //    saveMapAsFile();
+        readMapFile();
 
+    }
+    private void readMapFile(){
+        //read from file
+        try {
+            File toRead=new File("MapFile");
+            FileInputStream fis=new FileInputStream(toRead);
+            ObjectInputStream ois=new ObjectInputStream(fis);
+            MapData=(TreeMap<String,ArrayList<String>>)ois.readObject();
+            ois.close();
+            fis.close();
+
+        } catch(Exception e) {}
     }
     private void saveMapAsFile()  {
         File fileOne=new File("MapFile" );
@@ -53,28 +66,13 @@ public class ReadFromDataBase {
         for(String word:wordList){
             if(MapData.get(word)==null){
             MapData.put(word,new ArrayList<>());}
-            MapData.get(word).add(fileName);
+            if(!MapData.get(word).contains(fileName)){
+            MapData.get(word).add(fileName);}
         }
 
     }
 
 
 
-
-    public static void main(String[] args) throws Exception{
-        long time1=System.currentTimeMillis();
-        ReadFromDataBase readFromDataBase = new ReadFromDataBase();
-        System.out.println((System.currentTimeMillis()-time1)/1000);
-
-        Scanner sc=new Scanner(System.in);
-
-
-
-
-
-
-
-
-    }
 
 }
