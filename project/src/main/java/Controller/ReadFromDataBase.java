@@ -11,8 +11,8 @@ public class ReadFromDataBase {
      public static SortedMap<String, ArrayList<String>> MapData;
     public ReadFromDataBase() throws IOException {
         MapData =new TreeMap<>();
-      ///  reedEnglishDataFile();
-    //    saveMapAsFile();
+//        reedEnglishDataFile();
+//        saveMapAsFile();
         readMapFile();
 
     }
@@ -53,7 +53,7 @@ public class ReadFromDataBase {
         for(File f:file.listFiles()){
             if(f.isFile()){
            String txtInput= Files.readAllLines(f.toPath()).toString();
-                addEnglishDataFileToMap(f.getName(),txtInput);}
+                addEnglishDataFileToMap(f.getName().toLowerCase(),txtInput);}
             else{
                 break;
             }
@@ -71,6 +71,59 @@ public class ReadFromDataBase {
         }
 
     }
+    public  static ArrayList<String> findContentForMainSearch(String searchText){
+        ArrayList<String> content = new ArrayList<>();
+        if(MapData.get(searchText)!=null){
+            content.add(searchText);
+        }
+        for(int i=searchText.length()-1;i>0;i--){
+            if (MapData.get(searchText.substring(0,i))!=null){
+                content.add(searchText.substring(0,i));
+            }
+        }
+
+        String temp="";
+
+        for(char c:searchText.toCharArray()){
+            temp=searchText;
+            for(int i='a';i<='z';i++){
+                char z=(char) i;
+                temp =temp.replace(c, z);
+
+                if(MapData.get(temp)!=null&&!temp.equals(searchText)){
+                    content.add(temp);
+                }
+                temp=searchText;
+
+            }
+
+        }
+       for(int i=searchText.length()-1;i>1;i--){
+                 String subStr=searchText.substring(0,i);
+            for(char c:subStr.toCharArray()){
+                temp=subStr;
+                for(int e='a';e<='z';e++){
+                    char z=(char) e;
+                    temp =temp.replace(c, z);
+
+                    if(MapData.get(temp)!=null&&!temp.equals(searchText)){
+                        content.add(temp);
+                    }
+                    temp=subStr;
+
+                }
+
+            }
+
+        }
+        return content;
+
+
+    }
+
+
+
+
 
 
 

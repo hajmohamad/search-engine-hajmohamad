@@ -44,10 +44,10 @@ public class MainPageController implements Initializable {
                 }else{
                     lv_searchContent.setVisible(true);
                 }
-//                for(String s:ReadFromDataBase.findContentForMainSearch(tf_search.getText())){
-//                    lv_searchContent.getItems().add(s);
-//
-//                }
+                for(String s:ReadFromDataBase.findContentForMainSearch(tf_search.getText())){
+                    lv_searchContent.getItems().add(s);
+
+                }
 
 
 
