@@ -6,14 +6,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainPageController">
+<AnchorPane fx:id="ap_main" stylesheets="@../../../mainCss.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainPageController">
    <children>
       <ImageView fitHeight="650.0" fitWidth="1350.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@bgmp.jpg" />
          </image>
       </ImageView>
-      <ListView fx:id="lv_searchContent" layoutX="240.0" layoutY="416.0" maxHeight="180.0" prefHeight="107.0" prefWidth="610.0" />
-      <TextField fx:id="tf_search" layoutX="228.0" layoutY="390.0"  prefHeight="32.0" prefWidth="633.0" style="-fx-background-color: lightBlue; -fx-background-radius: 15px;" />
+      <ListView fx:id="lv_searchContent" layoutX="240.0" layoutY="416.0" maxHeight="180.0" prefHeight="107.0" prefWidth="610.0" style="-fx-background-radius: 20px;" stylesheets="@../../../mainCss.css" />
+      <TextField fx:id="tf_search" layoutX="228.0" layoutY="389.0" prefHeight="33.0" prefWidth="633.0" style="-fx-background-color: lightBlue; -fx-background-radius: 15px;" />
+      <ImageView fitHeight="33.0" fitWidth="37.0" layoutX="817.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-search-512.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

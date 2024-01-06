@@ -26,13 +26,14 @@ public class Main extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.initStyle(StageStyle.TRANSPARENT);
-        scene.setFill(Color.TRANSPARENT);
+            scene.setFill(Color.TRANSPARENT);
         stage.show();
     }
 
     public static void main(String[] args) {
         try {
             ReadFromDataBase rd=new ReadFromDataBase();
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
