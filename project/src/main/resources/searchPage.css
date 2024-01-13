@@ -1,0 +1,57 @@
+#ap {
+    -fx-padding: 10 5 0 15;
+    -fx-start-margin: 15 0 0 4;
+    -fx-min-height: 230.0;
+    -fx-pref-width: 631.0;
+    -fx-background-color: #c7afb8;
+
+    -fx-spacing: 6;
+    -fx-alignment: top-left;
+    -fx-background-radius: 20.0;
+    -fx-border-radius: 20.0;
+
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+    -fx-transition: -fx-scale-x 0.1s, -fx-scale-y 0.1s;
+}
+
+
+#ap:hover {
+    /* Hover state */
+    -fx-scale-x: 1.04;
+    -fx-scale-y: 1.04;
+}
+#ap_1{
+    -fx-background-image: url(https://s30.picofile.com/file/8471335692/Untitled.png);
+}
+#decriptionTxtArea {
+    -fx-font-size: 12.0;
+    -fx-min-height: 130;
+    -fx-min-width: 350.0;
+}
+
+#siteNameLable {
+
+    -fx-layout-x: 47.0;
+    -fx-layout-y: 21.0;
+    -fx-pref-height: 20.0;
+    -fx-pref-width: 419.0;
+    -fx-text: "name of site";
+    -fx-text-fill: #2626b5;
+    -fx-underline: true;
+    -fx-wrap-text: true;
+    -fx-font-size: 22.0;
+
+
+}
+
+#fileNameLable {
+    -fx-layout-x: 47.0;
+    -fx-layout-y: 53.0;
+    -fx-pref-height: 17.0;
+    -fx-pref-width: 64.0;
+    -fx-text: "file name";
+}
+/*#vbox_resault{*/
+/*    -fx-background-color: transparent;*/
+/*}*/

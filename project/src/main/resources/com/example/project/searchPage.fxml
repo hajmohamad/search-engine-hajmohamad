@@ -1,23 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane stylesheets="@../../../mainCss.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="650.0" prefWidth="1145.0" stylesheets="@../../../mainCss.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SearchPageController">
    <children>
-      <ImageView fitHeight="650.0" fitWidth="1350.0" opacity="0.55" pickOnBounds="true" preserveRatio="true">
+      <ImageView id="bgmpa" fitHeight="650.0" fitWidth="1169.0" layoutX="-7.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@bgmp.jpg" />
+            <Image url="@bgmp.png" />
          </image>
       </ImageView>
-      <ListView fx:id="lv_searchContent" layoutX="128.0" layoutY="86.0" maxHeight="180.0" prefHeight="107.0" prefWidth="610.0" style="-fx-background-radius: 20px;" stylesheets="@../../../mainCss.css" />
-      <TextField fx:id="tf_search" layoutX="116.0" layoutY="60.0" prefHeight="33.0" prefWidth="633.0" style="-fx-background-color: lightBlue; -fx-background-radius: 15px;" />
-      <ImageView fitHeight="33.0" fitWidth="37.0" layoutX="705.0" layoutY="60.0" onMouseClicked="#searchIt" pickOnBounds="true" preserveRatio="true">
+      <ScrollPane fx:id="sp_txts" layoutX="14.0" layoutY="77.0" prefHeight="564.0" prefWidth="893.0" style="-fx-background-color: none;" AnchorPane.leftAnchor="14.0">
+         <content>
+            <AnchorPane fx:id="ap_1" stylesheets="@../../../searchPage.css">
+               <children>
+                  <VBox fx:id="vbox_resault" fillWidth="false" layoutX="20.0" prefHeight="647.0" prefWidth="860.0" spacing="12.0" stylesheets="@../../../mainCss.css">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="siteNumber" prefHeight="27.0" prefWidth="134.0" text="Label">
+                           <VBox.margin>
+                              <Insets left="18.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <ScrollPane fx:id="sp_images" fitToWidth="true" layoutX="14.0" layoutY="77.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="564.0" prefWidth="1128.0" visible="false">
+         <content>
+            <GridPane fx:id="gp_image" hgap="10.0" prefHeight="639.0" prefWidth="1139.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" percentWidth="25.0" prefWidth="270.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" percentWidth="25.0" prefWidth="270.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="270.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" percentWidth="25.0" prefWidth="270.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="449.0" minHeight="10.0" prefHeight="339.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="349.0" minHeight="10.0" prefHeight="339.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="333.0" fitWidth="281.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></ImageView>
+               </children>
+            </GridPane>
+         </content>
+      </ScrollPane>
+      <ListView fx:id="lv_searchContent" layoutX="83.0" layoutY="58.0" maxHeight="180.0" prefHeight="107.0" prefWidth="610.0" style="-fx-background-radius: 20px;" stylesheets="@../../../mainCss.css" visible="false" />
+      <TextField fx:id="tf_search" layoutX="71.0" layoutY="25.0" prefHeight="33.0" prefWidth="633.0" style="-fx-background-color: lightBlue; -fx-background-radius: 15px;" />
+      <ImageView fitHeight="33.0" fitWidth="37.0" layoutX="663.0" layoutY="25.0" onMouseClicked="#searchIt" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons8-search-512.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="LIGHTBLUE" height="46.0" layoutX="1036.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" width="62.0" />
+      <ImageView fitHeight="53.0" fitWidth="56.0" layoutX="1039.0" layoutY="30.0" onMouseClicked="#camera" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../camer.png" />
          </image>
       </ImageView>
    </children>

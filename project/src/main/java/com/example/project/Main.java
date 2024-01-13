@@ -19,11 +19,13 @@ import co.elastic.clients.transport.rest_client.RestClientOptions;
 import java.io.IOException;
 
 public class Main extends Application {
+    public static  Stage orginalStage;
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainPage.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1150, 600);
-        stage.setTitle("Hello!");
+        orginalStage=stage;
+        Scene scene = new Scene(fxmlLoader.load(), 1150, 650);
+
         stage.setScene(scene);
         stage.initStyle(StageStyle.TRANSPARENT);
             scene.setFill(Color.TRANSPARENT);

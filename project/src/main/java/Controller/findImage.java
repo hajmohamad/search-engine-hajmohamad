@@ -8,10 +8,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class findImage {
+    static ArrayList<String> lastImageLinks;
     public static ArrayList<String> getLink(String order) {
         ArrayList<String> imageList = new ArrayList<String>();
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", "python", "I:\\ramezon\\data structures\\search-engine-hajmohamad\\project\\src\\main\\java\\Controller\\main.py");
+            ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", "python", "I:\\ramezon\\data structures\\search-engine-hajmohamad\\project\\src\\main\\java\\Controller\\findImage.py");
             Process process = processBuilder.start();
 
 
@@ -35,17 +36,18 @@ public class findImage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        lastImageLinks=imageList;
+
     return imageList;
 
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String order = sc.nextLine();
-        for(String s:getLink(order)) {
-            System.out.println(s);
-        }
-
-
+        getLink("tree");
     }
+
+
+
+
+
 }
