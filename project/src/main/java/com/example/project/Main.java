@@ -24,11 +24,11 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainPage.fxml"));
         orginalStage=stage;
-        Scene scene = new Scene(fxmlLoader.load(), 1150, 650);
+        Scene scene = new Scene(fxmlLoader.load(), 1150, 658);
 
         stage.setScene(scene);
         stage.initStyle(StageStyle.TRANSPARENT);
-            scene.setFill(Color.TRANSPARENT);
+        scene.setFill(Color.TRANSPARENT);
         stage.show();
     }
 

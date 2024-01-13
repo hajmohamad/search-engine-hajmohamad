@@ -51,14 +51,14 @@ public class MainPageController implements Initializable {
         try {
         SearchPageController.searchInput=tf_search.getText();
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("searchPage.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1150, 600);
-        Main.orginalStage.setTitle("Hello!");
+        Scene scene = new Scene(fxmlLoader.load(), 1150, 650);
         Main.orginalStage.setScene(scene);
+        scene.setFill(Color.TRANSPARENT);
         Main.orginalStage.show();
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
 
 
     }

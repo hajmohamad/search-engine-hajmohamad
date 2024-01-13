@@ -228,8 +228,14 @@ public class ReadFromDataBase {
 
             }
         }
-        return fileTxtList[count]+" "+fileTxtList[count+1]+" "+fileTxtList[count+2];
+        String res="";
+        if(count+3>searchInput.length()){
+           res= fileTxtList[count-2]+" "+fileTxtList[count-1]+" "+fileTxtList[count];
+        }else{
+            res=fileTxtList[count]+" "+fileTxtList[count+1]+" "+fileTxtList[count+2];
 
+        }
+        return res;
 
 
     }

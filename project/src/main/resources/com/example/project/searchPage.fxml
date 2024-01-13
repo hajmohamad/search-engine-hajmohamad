@@ -14,14 +14,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane prefHeight="650.0" prefWidth="1145.0" stylesheets="@../../../mainCss.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SearchPageController">
+<AnchorPane prefHeight="650.0" prefWidth="1145.0" style="-fx-background-color: none;" stylesheets="@../../../mainCss.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SearchPageController">
    <children>
       <ImageView id="bgmpa" fitHeight="650.0" fitWidth="1169.0" layoutX="-7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@bgmp.png" />
          </image>
       </ImageView>
-      <ScrollPane fx:id="sp_txts" layoutX="14.0" layoutY="77.0" prefHeight="564.0" prefWidth="893.0" style="-fx-background-color: none;" AnchorPane.leftAnchor="14.0">
+      <ScrollPane fx:id="sp_txts" layoutX="14.0" layoutY="77.0" prefHeight="564.0" prefWidth="897.0" style="-fx-background-color: none;" AnchorPane.leftAnchor="14.0">
          <content>
             <AnchorPane fx:id="ap_1" stylesheets="@../../../searchPage.css">
                <children>

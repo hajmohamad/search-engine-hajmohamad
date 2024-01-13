@@ -142,11 +142,12 @@ public class SearchPageController  implements Initializable {
             Label siteNameLable=new Label();
             siteNameLable.setId("siteNameLable");
             siteNameLable.getStylesheets().add("searchPage.css");
-            siteNameLable.setText("ww");
             Label decriptionTxtArea=new Label();
             decriptionTxtArea.setId("decriptionTxtArea");
             decriptionTxtArea.getStylesheets().add("searchPage.css");
             decriptionTxtArea.setText(ReadFromDataBase.getStringFronFile(nameFile));
+            siteNameLable.setText(ReadFromDataBase.findNameForFile(searchInput,decriptionTxtArea.getText()));
+
             decriptionTxtArea.setWrapText(true);
             VBox ap=new VBox();
             ap.prefHeight(300);
