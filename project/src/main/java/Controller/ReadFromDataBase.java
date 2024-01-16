@@ -213,6 +213,7 @@ public class ReadFromDataBase {
 
     }
     public static String findNameForFile(String searchInput,String fileTxt){
+        fileTxt =fileTxt.toLowerCase();
         String[] searchInputList=searchInput.split("\\s+[+]\\s+");;
         String[] fileTxtList=fileTxt.split("[\\p{Punct}\\s]+");
         ArrayList<String> arrayList = new ArrayList<>(List.of(fileTxtList));
@@ -221,20 +222,34 @@ public class ReadFromDataBase {
             if(!searchInputList[i].startsWith("-")){
                 count=arrayList.indexOf(searchInputList[i]);
                 if(count!=-1){
-
                     break;
                 }
-
-
             }
         }
-        String res="";
-        if(count+3>searchInput.length()){
-           res= fileTxtList[count-2]+" "+fileTxtList[count-1]+" "+fileTxtList[count];
-        }else{
-            res=fileTxtList[count]+" "+fileTxtList[count+1]+" "+fileTxtList[count+2];
-
+        if(count==-1){
+            return searchInput;
         }
+        String res="";
+
+        if(count>2&& arrayList.get(count - 2) !=null ){
+            res+= arrayList.get(count - 2)+" ";
+        }
+            if(count>1&& arrayList.get(count - 1) !=null){
+                res+= arrayList.get(count - 1)+" ";
+            }
+           if(arrayList.get(count) !=null){
+               res+= arrayList.get(count)+" ";
+           }
+
+           if(arrayList.get(count + 1) !=null){
+               res+= arrayList.get(count + 1)+" ";
+           }
+
+           if(arrayList.get(count + 2) !=null){
+               res+= arrayList.get(count + 2)+" ";
+           }
+
+
         return res;
 
 
