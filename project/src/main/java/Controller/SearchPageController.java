@@ -85,6 +85,7 @@ public class SearchPageController  implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        vbox_resault.setStyle("-fx-background-color:  #002540");
         tf_search.setText(searchInput);
         lv_searchContent.setVisible(false);
         tf_search.textProperty().addListener(new ChangeListener<String>() {
@@ -112,7 +113,6 @@ public class SearchPageController  implements Initializable {
 
 
 
-        vbox_resault.setStyle("-fx-background-color: transparent");
         //find image and display it
         if(sp_image){
             sp_images.setVisible(true);

@@ -3,7 +3,7 @@
     -fx-start-margin: 15 0 0 4;
     -fx-min-height: 230.0;
     -fx-pref-width: 631.0;
-    -fx-background-color: #c7afb8;
+    -fx-background-color: #2c309e;
 
     -fx-spacing: 6;
     -fx-alignment: top-left;
@@ -28,6 +28,7 @@
     -fx-font-size: 12.0;
     -fx-min-height: 130;
     -fx-min-width: 350.0;
+    -fx-text-fill: #ccbdbd;
 }
 
 #siteNameLable {
@@ -37,7 +38,7 @@
     -fx-pref-height: 20.0;
     -fx-pref-width: 419.0;
     -fx-text: "name of site";
-    -fx-text-fill: #2626b5;
+    -fx-text-fill: #9898bc;
     -fx-underline: true;
     -fx-wrap-text: true;
     -fx-font-size: 22.0;
