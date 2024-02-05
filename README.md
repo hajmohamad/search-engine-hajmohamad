@@ -2,8 +2,8 @@
 in the name of god 
 search engine project using map&elasticsearch
  
-
-<img src="(https://s30.picofile.com/file/8472253726/a1.jpg)"  width="500"/>
+<img src="https://s30.picofile.com/file/8472253726/a1.jpg"  width="500"/>
+<img src="https://s30.picofile.com/file/8472253726/a1.jpg"  width="500"/>
 <img src="[https://s31.picofile.com/file/8472253818/a2.jpg]"  width="500"/>
 <img src="[https://s30.picofile.com/file/8472253834/a3.jpg]"  width="500"/>
 <img src="[[https://s30.picofile.com/file/8472253834/a3.jpg]"  width="500"/>
